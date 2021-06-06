@@ -1,8 +1,8 @@
-mod year_15;
+mod year_20;
 mod reader;
 
 fn main() {
-    let input = reader::read_input(15, 1);
-    let (a, b) = year_15::day_1::run(input);
+    let input = reader::read_input(20, 1);
+    let (a, b) = year_20::day_1::run(input);
     println!("{} {}", a, b)
 }
