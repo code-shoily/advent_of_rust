@@ -29,6 +29,7 @@ fn run_2(data: &str) -> i16 {
     index
 }
 
+#[allow(dead_code)]
 pub fn run(data: String) -> (i16, i16) {
     (run_1(&data), run_2(&data))
 }

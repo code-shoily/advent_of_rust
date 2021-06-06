@@ -34,6 +34,7 @@ fn run_2(data: &str) -> Result<i32, &str> {
     Err("Number not found, perhaps invalid input-set?")
 }
 
+#[allow(dead_code)]
 pub fn run(data: String) -> (i32, i32) {
     (run_1(&data).unwrap(), run_2(&data).unwrap())
 }
