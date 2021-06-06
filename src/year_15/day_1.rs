@@ -1,4 +1,4 @@
-fn process(data: &String) -> Vec<char> {
+fn process(data: &str) -> Vec<char> {
     data.chars().collect::<Vec<char>>()
 }
 
@@ -10,11 +10,11 @@ fn step(current_floor: i16, instruction: &char) -> i16 {
     }
 }
 
-fn run_1(data: &String) -> i16 {
+fn run_1(data: &str) -> i16 {
     process(data).iter().fold(0, step)
 }
 
-fn run_2(data: &String) -> i16 {
+fn run_2(data: &str) -> i16 {
     let mut index = 0;
     let mut current_floor = 0;
 
