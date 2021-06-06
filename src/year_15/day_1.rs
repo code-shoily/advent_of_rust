@@ -32,3 +32,32 @@ fn run_2(data: &str) -> i16 {
 pub fn run(data: String) -> (i16, i16) {
     (run_1(&data), run_2(&data))
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_process_fn() {
+        assert_eq!(process("(())"), ['(', '(', ')', ')'])
+    }
+
+    #[test]
+    fn test_run_1() {
+        assert_eq!(run_1("(())"), 0);
+        assert_eq!(run_1("((("), 3);
+        assert_eq!(run_1("(()(()("), 3);
+        assert_eq!(run_1("(()(()("), 3);
+        assert_eq!(run_1("))((((("), 3);
+        assert_eq!(run_1("())"), -1);
+        assert_eq!(run_1("))("), -1);
+        assert_eq!(run_1(")))"), -3);
+        assert_eq!(run_1(")())())"), -3);
+    }
+
+    #[test]
+    fn test_run_2() {
+        assert_eq!(run_2(")"), 1);
+        assert_eq!(run_2("()())"), 5);
+    }
+}
