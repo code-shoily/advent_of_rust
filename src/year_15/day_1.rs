@@ -18,7 +18,7 @@ fn run_2(data: &str) -> i16 {
     let mut index = 0;
     let mut current_floor = 0;
 
-    for instruction in process(data).iter() {
+    for instruction in &process(data) {
         index += 1;
         current_floor = step(current_floor, &instruction);
         if current_floor == -1 {
